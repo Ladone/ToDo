@@ -1,0 +1,50 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: ladone
+ * Date: 12/26/18
+ * Time: 11:31 PM
+ */
+
+namespace ToDoBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * @ORM\Entity()
+ * @ORM\Table(name="task")
+ */
+class Task
+{
+    /**
+     * @ORM\Id()
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $_id;
+
+    /**
+     * @ORM\Column(type="string", length=32)
+     */
+    private $_name;
+
+    /**
+     * @ORM\Column(type="text", length=128)
+     */
+    private $_description;
+
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $_date;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $_isDone;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $_overdue;
+}
